@@ -57,7 +57,7 @@ function EjerciciosObjetos(){
       var resultado ="";
       for(var i in objeto){
         if (objeto.hasOwnProperty(i)){
-          resultado += i +": " + objeto[i] + " ";
+          resultado += i +"-->" + objeto[i] + " ";
         }
       }
       return resultado;
@@ -89,7 +89,7 @@ function EjerciciosObjetos(){
     }
 
     function ficha(){
-      return "Nombre : "+ this.nombre + " " + this.apellido + ", Edad : " +this.edad + ", Pais: " +this.pais;
+      return "Nombre : "+ this.nombre + " " + this.apellido + "\nEdad : " +this.edad + "\nPais: " +this.pais;
     }
 
     this.ficha = ficha;
@@ -128,13 +128,13 @@ describe ("Ejercicios Objetos II", function(){
 
   describe("Ejercicio 3", function () {
     it("Prueba de [6,5,4,3,2,1]", function () {
-      assert.equal("propiedad1: 6 propiedad2: 5 propiedad3: 4 propiedad4: 3 propiedad5: 2 propiedad6: 1 ", ejercicios.ejercicio3(6,5,4,3,2,1));
+      assert.deepEqual("propiedad1-->6 propiedad2-->5 propiedad3-->4 propiedad4-->3 propiedad5-->2 propiedad6-->1 ", ejercicios.ejercicio3(6,5,4,3,2,1));
     });
   });
 
   describe("Ejercicio 4", function () {
     it("Prueba de ('Blanca', 'Rios', 22, 'Femenino', 'Puebla', 'Mexico')", function () {
-      assert.equal("Nombre : Blanca Rios, Edad : 22, Pais: Mexico", ejercicios.ejercicio4("Blanca", "Rios", 22, "Femenino", "Puebla", "Mexico"));
+      assert.equal("Nombre : Blanca Rios" +"\nEdad : 22" +"\nPais: Mexico", ejercicios.ejercicio4("Blanca", "Rios", 22, "Femenino", "Puebla", "Mexico"));
     });
   });
 });
